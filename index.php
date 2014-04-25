@@ -19,15 +19,15 @@
     </head>
     <body>
         <div id="youtube" style="display: none"></div>
-        <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px">
+        <div style="position: absolute; bottom: 0; right: 0; width: 125px; height: 125px">
             <script type="text/javascript"><!--
                 google_ad_client = "ca-pub-8503195967090189";
-                google_ad_slot = "4568519467";
-                google_ad_width = 200;
-                google_ad_height = 200;
+                google_ad_slot = "5905651865";
+                google_ad_width = 125;
+                google_ad_height = 125;
                 //-->
             </script>
-            <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+            <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
         </div>
         <script type="text/javascript">
             var youtube;
