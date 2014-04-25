@@ -12,6 +12,7 @@
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
+                overflow: hidden;
             }
         </style>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
