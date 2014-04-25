@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TURN DOWN FOR BUTT</title>
+        <style>
+            html {
+                background-image: url('https://i4.sndcdn.com/artworks-000071536084-wwdmb2-t500x500.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                overflow: hidden;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://connect.soundcloud.com/sdk.js"></script>
+    </head>
+    <body>
+        <div id="soundcloud" style="display: none"></div>
+        <div style="position: absolute; bottom: 0; right: 0; width: 125px; height: 125px">
+            <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-8503195967090189";
+                google_ad_slot = "5905651865";
+                google_ad_width = 125;
+                google_ad_height = 125;
+                //-->
+            </script>
+            <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+        </div>
+        <div style="position: absolute; left: 0; bottom: 0; padding: 5px 0px">
+            <a href="https://soundcloud.com/tmfc666/dj-snake-turn-down-for-what-mo" target="_blank" style="padding: 5px; background: white; font-size: 18px"><b>TMFC666 on SoundCloud</b></a>
+        </div>
+        <script type="text/javascript">
+            var soundcloud;
+            SC.oEmbed("https://soundcloud.com/tmfc666/dj-snake-turn-down-for-what-mo", {auto_play: true}, function(oembed) {
+                if(oembed) {
+                    $("#soundcloud").html(oembed.html);
+                    var frame = $("#soundcloud iframe")[0];
+                    frame.onload = function() {
+                        window.player = SC.Widget(frame).bind(SC.Widget.Events.FINISH, function () {
+                            window.player.skip(0).seekTo(0);
+                            window.player.play();
+                        });
+                    }
+                }
+            });
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-50399393-1', 'turndownforbutt.com');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>

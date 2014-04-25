@@ -30,6 +30,9 @@
             </script>
             <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
         </div>
+        <div style="position: absolute; left: 0; bottom: 0; padding: 5px 0px">
+            <a href="http://youtube.com/watch?v=HMUDVMiITOU" target="_blank" style="padding: 5px; background: white; font-size: 18px"><b>Video on YouTube</b></a>
+        </div>
         <script type="text/javascript">
             var youtube;
 
