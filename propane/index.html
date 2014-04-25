@@ -5,14 +5,16 @@
         <style>
             html {
                 background-image: url('https://i4.sndcdn.com/artworks-000071536084-wwdmb2-t500x500.jpg');
-                background-repeat: no-repeat;
+                background-repeat: repeat;
+                overflow: hidden;
+            }
+            html.full {
                 background-position: center;
                 background-attachment: fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
-                overflow: hidden;
             }
         </style>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -46,6 +48,10 @@
                         });
                     }
                 }
+            });
+
+            $(document).ready(function() {
+                setInterval("$('html').toggleClass('full')", 1000);
             });
         </script>
         <script>
