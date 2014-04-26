@@ -70,6 +70,7 @@
                 'inflatable':  'http://i.imgur.com/66JjRPY.gif',
                 'flanders':    'http://www.reactiongifs.com/wp-content/uploads/2013/12/pxmEA.gif',
                 'squidward':   'http://www.reactiongifs.com/wp-content/uploads/2012/11/squidward_twerkin.gif',
+                'lazytown':    'http://i382.photobucket.com/albums/oo268/korn_fagg/lazytown.gif',
             };
 
             var changeBackground = function(key) {
