@@ -4,7 +4,6 @@
         <title>TURN DOWN FOR BUTT</title>
         <style>
             html {
-                background-image: url('http://media.giphy.com/media/MWDsImejYsyis/giphy.gif');
                 background-repeat: no-repeat;
                 background-position: center;
                 background-attachment: fixed;
@@ -16,10 +15,10 @@
             }
         </style>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="http://connect.soundcloud.com/sdk.js"></script>
     </head>
     <body>
-        <div id="youtube" style="display: none"></div>
+        <div id="soundcloud" style="display: none"></div>
         <div style="position: absolute; bottom: 0; right: 0; width: 125px; height: 125px">
             <script type="text/javascript"><!--
                 google_ad_client = "ca-pub-8503195967090189";
@@ -31,81 +30,72 @@
             <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
         </div>
         <div style="position: absolute; left: 0; bottom: 0; padding: 5px 0px">
-            <a href="http://youtube.com/watch?v=HMUDVMiITOU" target="_blank" style="padding: 5px; background: white; font-size: 18px"><b>Video on YouTube</b></a>
+            <a href="https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for" target="_blank" style="padding: 5px; background: white; font-size: 18px"><b>Song on SoundCloud</b></a>
         </div>
         <script type="text/javascript">
-            var youtube;
-
-            function onYouTubeIframeAPIReady() {
-                youtube = new YT.Player('youtube', {
-                    height: '200',
-                    width: '200',
-                    videoId: 'HMUDVMiITOU',
-                    playerVars: {
-                        'autoplay': 1,
-                        'loop' : 1
-                    },
-                    events: {
-                        'onReady': function (event) {},
-                        'onStateChange': function (state) {
-                            if(state.data == 0){
-                                youtube.playVideo();
-                            }
-                        },
-                        'onError': function (event) {}
+            SC.oEmbed("https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for", {auto_play: true}, function(oembed) {
+                if(oembed) {
+                    $("#soundcloud").html(oembed.html);
+                    var frame = $("#soundcloud iframe")[0];
+                    frame.onload = function() {
+                        window.player = SC.Widget(frame).bind(SC.Widget.Events.FINISH, function () {
+                            window.player.skip(0).seekTo(0);
+                            window.player.play();
+                        });
                     }
-                });
-            }
+                }
+            });
 
             var images = {};
-            var sources = [
-                'MWDsImejYsyis',
-                'LjIn8IjwFcbwA',
-                'bVfE9AGsqo98c',
-                'aWB56UhMhvqpO',
-                '130HITF1ekbUhq',
-                'rUs7L7BeFxBIY',
-                'HUfTNG6lOZNK',
-                'aR0nY5Imqkr7y',
-                'r7WbZwvlJeocU',
-                'UUYMrnOTyeWOI',
-                'fIRlp168XuC6Q',
-                'b9QBHfcNpvqDK',
-                'QrK0u2Li8IMUg',
-                'fyHv5syNZTpFS',
-                '12LE7NClxdJ9m0',
-                'lmr7ac1Gn4kmc',
-                'uUUaqBhyava6Y',
-            ];
+            var sources = {
+                'doge':        'http://media.giphy.com/media/MWDsImejYsyis/giphy.gif',
+                'fireworks':   'http://media.giphy.com/media/LjIn8IjwFcbwA/giphy.gif',
+                'spiderman':   'http://media.giphy.com/media/bVfE9AGsqo98c/giphy.gif',
+                'archer':      'http://media.giphy.com/media/aWB56UhMhvqpO/giphy.gif',
+                'simpsons':    'http://media.giphy.com/media/130HITF1ekbUhq/giphy.gif',
+                'fry':         'http://media.giphy.com/media/rUs7L7BeFxBIY/giphy.gif',
+                'corgi':       'http://media.giphy.com/media/HUfTNG6lOZNK/giphy.gif',
+                'bounce':      'http://media.giphy.com/media/aR0nY5Imqkr7y/giphy.gif',
+                'buttslap':    'http://media.giphy.com/media/r7WbZwvlJeocU/giphy.gif',
+                'honeybooboo': 'http://media.giphy.com/media/UUYMrnOTyeWOI/giphy.gif',
+                'cleveland':   'http://media.giphy.com/media/fIRlp168XuC6Q/giphy.gif',
+                'goose':       'http://media.giphy.com/media/b9QBHfcNpvqDK/giphy.gif',
+                'catbed':      'http://media.giphy.com/media/QrK0u2Li8IMUg/giphy.gif',
+                'catyard':     'http://media.giphy.com/media/fyHv5syNZTpFS/giphy.gif',
+                'rocko':       'http://media.giphy.com/media/12LE7NClxdJ9m0/giphy.gif',
+                'penguin':     'http://media.giphy.com/media/lmr7ac1Gn4kmc/giphy.gif',
+                'bambi':       'http://media.giphy.com/media/uUUaqBhyava6Y/giphy.gif',
+                'inflatable':  'http://i.imgur.com/66JjRPY.gif',
+            };
 
-            var giphy = function(id) {
-                return 'http://media.giphy.com/media/' + id + '/giphy.gif';
-            }
+            var changeBackground = function(key) {
+                var next = key;
 
-            var changeBackground = function() {
-                var next = Math.floor(Math.random() * sources.length);
-                var hash = sources[next];
-                var url = giphy(hash);
+                if (next == "") {
+                    var idx = Math.floor(Math.random() * Object.keys(sources).length);
+                    next = Object.keys(sources)[idx];
+                }
 
-                if (!images.hasOwnProperty(hash)) {
+                var url = sources[next];
+                var nextFunc = function() { changeBackground(key); }
+                var timeout = 10000;
+
+                if (!images.hasOwnProperty(url)) {
                     var img = new Image();
-                    img.id = hash;
                     img.onload = function() {
                         images[this.id] = this;
                         $('html').css('background-image', "url('" + url + "')");
-                        setTimeout(changeBackground, 10000);
+                        setTimeout(nextFunc, timeout);
                     }
                     img.src = url;
-                    images[hash] = new Image(url);
+                    images[url] = new Image(url);
                 } else {
                     $('html').css('background-image', "url('" + url + "')");
-                    setTimeout(changeBackground, 10000);
+                    setTimeout(nextFunc, timeout);
                 }
             }
 
-            $(document).ready(function() {
-                setTimeout(changeBackground, 10000);
-            });
+            changeBackground(window.location.hash.substring(1));
         </script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
