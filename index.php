@@ -74,6 +74,10 @@
             };
 
             var changeBackground = function(key) {
+                if (!sources.hasOwnProperty(key)) {
+                    key = "";
+                }
+
                 var next = key;
 
                 if (next == "") {
