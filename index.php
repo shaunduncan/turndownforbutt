@@ -16,6 +16,7 @@
         </style>
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://connect.soundcloud.com/sdk.js"></script>
+        <script src="http://w.soundcloud.com/player/api.js"></script>
     </head>
     <body>
         <div id="soundcloud" style="display: none"></div>
@@ -33,7 +34,8 @@
             <a href="https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for" target="_blank" style="padding: 5px; background: white; font-size: 18px"><b>Song on SoundCloud</b></a>
         </div>
         <script type="text/javascript">
-            SC.oEmbed("https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for", {auto_play: true}, function(oembed) {
+            var soundcloud;
+            SC.oEmbed("https://soundcloud.com/newbangersdaily/dj-snake-lil-jon-turn-down-for-what", {auto_play: true}, function(oembed) {
                 if(oembed) {
                     $("#soundcloud").html(oembed.html);
                     var frame = $("#soundcloud iframe")[0];
@@ -66,6 +68,8 @@
                 'penguin':     'http://media.giphy.com/media/lmr7ac1Gn4kmc/giphy.gif',
                 'bambi':       'http://media.giphy.com/media/uUUaqBhyava6Y/giphy.gif',
                 'inflatable':  'http://i.imgur.com/66JjRPY.gif',
+                'flanders':    'http://www.reactiongifs.com/wp-content/uploads/2013/12/pxmEA.gif',
+                'squidward':   'http://www.reactiongifs.com/wp-content/uploads/2012/11/squidward_twerkin.gif',
             };
 
             var changeBackground = function(key) {
