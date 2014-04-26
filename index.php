@@ -35,7 +35,7 @@
         </div>
         <script type="text/javascript">
             var soundcloud;
-            SC.oEmbed("https://soundcloud.com/newbangersdaily/dj-snake-lil-jon-turn-down-for-what", {auto_play: true}, function(oembed) {
+            SC.oEmbed("https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for", {auto_play: true}, function(oembed) {
                 if(oembed) {
                     $("#soundcloud").html(oembed.html);
                     var frame = $("#soundcloud iframe")[0];
