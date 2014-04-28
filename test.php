@@ -17,11 +17,9 @@
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://connect.soundcloud.com/sdk.js"></script>
         <script src="http://w.soundcloud.com/player/api.js"></script>
-        <script src="https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json.js"></script>
     </head>
     <body>
         <div id="soundcloud"></div>
-        <div id="debug" style="background: white; color: red"></div>
         <div style="position: absolute; left: 0; bottom: 0; padding: 5px 0px">
             <a href="https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for" target="_blank" style="padding: 5px; background: white; font-size: 18px"><b>Song on SoundCloud</b></a>
         </div>
@@ -33,7 +31,6 @@
 
             SC.oEmbed("https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for", function(oembed) {
                 if(oembed) {
-                    $('#debug').text(JSON.stringify(oembed));
                     $("#soundcloud").html(oembed.html);
                     var frame = $("#soundcloud iframe")[0];
                     frame.onload = function() {
