@@ -43,6 +43,7 @@
                     $("#soundcloud").html(oembed.html);
                     var frame = $("#soundcloud iframe")[0];
                     frame.onload = function() {
+                        window.player.play();  // Fix for mobile
                         window.player = SC.Widget(frame).bind(SC.Widget.Events.FINISH, function () {
                             window.player.skip(0).seekTo(0);
                             window.player.play();
