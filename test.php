@@ -36,7 +36,11 @@
             <a href="https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for" target="_blank" style="padding: 5px; background: white; font-size: 18px"><b>Song on SoundCloud</b></a>
         </div>
         <script type="text/javascript">
-            var soundcloud;
+            var playTrack = function() {
+                window.player.skip(0).seekTo(0);
+                window.player.play();
+            }
+
             SC.oEmbed("https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for", function(oembed) {
                 if(oembed) {
                     $('#debug').text(JSON.stringify(oembed));
@@ -44,14 +48,8 @@
                     var frame = $("#soundcloud iframe")[0];
                     frame.onload = function() {
                         window.player = SC.Widget(frame);
-                        window.player.bind(SC.Widget.Events.FINISH, function () {
-                            window.player.skip(0).seekTo(0);
-                            window.player.play();
-                        });
-
-                        // Fix for mobile
-                        window.player.skip(0).seekTo(0);
-                        window.player.play();
+                        window.player.bind(SC.Widget.Events.READY, playTrack);
+                        window.player.bind(SC.Widget.Events.FINISH, playTrack);
                     }
                 }
             });
