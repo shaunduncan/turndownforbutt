@@ -17,9 +17,11 @@
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="http://connect.soundcloud.com/sdk.js"></script>
         <script src="http://w.soundcloud.com/player/api.js"></script>
+        <script src="https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json.js"></script>
     </head>
     <body>
         <div id="soundcloud"></div>
+        <div id="debug" style="background: white; color: red"></div>
         <div style="position: absolute; bottom: 0; right: 0; width: 125px; height: 125px">
             <script type="text/javascript"><!--
                 google_ad_client = "ca-pub-8503195967090189";
@@ -37,6 +39,7 @@
             var soundcloud;
             SC.oEmbed("https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for", {auto_play: true}, function(oembed) {
                 if(oembed) {
+                    $('#debug').text(JSON.stringify(oembed));
                     $("#soundcloud").html(oembed.html);
                     var frame = $("#soundcloud iframe")[0];
                     frame.onload = function() {
