@@ -22,16 +22,6 @@
     <body>
         <div id="soundcloud"></div>
         <div id="debug" style="background: white; color: red"></div>
-        <div style="position: absolute; bottom: 0; right: 0; width: 125px; height: 125px">
-            <script type="text/javascript"><!--
-                google_ad_client = "ca-pub-8503195967090189";
-                google_ad_slot = "5905651865";
-                google_ad_width = 125;
-                google_ad_height = 125;
-                //-->
-            </script>
-            <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-        </div>
         <div style="position: absolute; left: 0; bottom: 0; padding: 5px 0px">
             <a href="https://soundcloud.com/djsnake-king/dj-snake-lil-jon-turn-down-for" target="_blank" style="padding: 5px; background: white; font-size: 18px"><b>Song on SoundCloud</b></a>
         </div>
@@ -114,15 +104,6 @@
             }
 
             changeBackground(window.location.hash.substring(1));
-        </script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-50399393-1', 'turndownforbutt.com');
-            ga('send', 'pageview');
         </script>
     </body>
 </html>
