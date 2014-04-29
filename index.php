@@ -73,7 +73,7 @@
                 'lazytown':    'http://i382.photobucket.com/albums/oo268/korn_fagg/lazytown.gif',
                 'shaq':        'http://i.imgur.com/wR0PKPi.gif',
                 'wigglecat':   'http://i.imgur.com/oIFxiod.gif',
-                'data':        'http://media.giphy.com/media/QQKhpfeRQqz6M/giphy.gif',
+                'data':        'http://i.imgur.com/aEWRAOm.gif',
             };
 
             var changeBackground = function(key) {
